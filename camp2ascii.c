@@ -6,6 +6,7 @@
 #include "frame_read.h"
 #include "files.h"
 #include "initializations.h"
+#include <stdint.h>
 
 //global flag, goes to 1 when the user presses CTRL+C, etc
 sig_atomic_t flag_stop;						/* flag for the end of the recording */

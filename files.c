@@ -9,6 +9,7 @@
 /* Here, we put all functions related to files operations */
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include <string.h>
 #include <math.h>
 #include "limits.h"

@@ -16,6 +16,7 @@
 #include <inttypes.h>		/* C99 portable data types */
 #include "limits.h"
 #include "types_processing.h"
+#include <stdint.h>
 
 /* Functions for swapping byte order. */
 /* Inspired from  http://www.gamedev.net/reference/articles/article2091.asp (GPL)*/
@@ -271,7 +272,7 @@ int Read_IEEE4B(frame_structure *frame,const config_structure *config) {
 int Read_USHORT(frame_structure *frame,const config_structure *config) {
 	//2 bytes unsigned int			LSB
 	Iresult=(int32_t)ReadUInt2(frame);
-	if(Iresult>=frame->uint2_nan || isnan(Iresult))
+	if(Iresult>=frame->uint2_nan) // || isnan(Iresult))
 		fprintf(config->output,config->NANs);
 	else {
 		fprintf(config->output,config->ints_format,Iresult);
@@ -283,7 +284,7 @@ int Read_USHORT(frame_structure *frame,const config_structure *config) {
 int Read_SHORT(frame_structure *frame,const config_structure *config) {
 	//2 bytes signed int			LSB
 	Iresult=(int32_t)ReadInt2(frame);
-	if(Iresult>=frame->uint2_nan || isnan(Iresult))
+	if(Iresult>=frame->uint2_nan) //|| isnan(Iresult))  // Iresult isn't a float, so this code is faulty
 		fprintf(config->output,config->NANs);
 	else {
 		fprintf(config->output,config->ints_format,Iresult);
@@ -295,7 +296,7 @@ int Read_SHORT(frame_structure *frame,const config_structure *config) {
 int Read_UINT2(frame_structure *frame,const config_structure *config) {
 	//2 bytes unsigned int			MSB
 	Iresult=(int32_t)ReadUInt2Swap(frame);
-	if(Iresult>=frame->uint2_nan || isnan(Iresult))
+	if(Iresult>=frame->uint2_nan) // || isnan(Iresult)) // Iresult isn't a float, so this code is faulty
 		fprintf(config->output,config->NANs);
 	else {
 		fprintf(config->output,config->ints_format,Iresult);
@@ -307,7 +308,7 @@ int Read_UINT2(frame_structure *frame,const config_structure *config) {
 int Read_INT2(frame_structure *frame,const config_structure *config) {
 	//2 bytes signed int			MSB
 	Iresult=(int32_t)ReadInt2Swap(frame);
-	if(SIresult>=frame->uint2_nan || isnan(Iresult))
+	if(SIresult>=frame->uint2_nan) // || isnan(Iresult))
 		fprintf(config->output,config->NANs);
 	else {
 		fprintf(config->output,config->ints_format,Iresult);

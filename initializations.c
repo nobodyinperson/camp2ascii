@@ -8,6 +8,7 @@
 **************************************************************************/
 /* reading command line parameters, reading default values, ... */
 #include <stdlib.h>
+#include <stdint.h>
 #include "structures.h"
 #include "initializations.h"
 #include "camp2ascii.h"
