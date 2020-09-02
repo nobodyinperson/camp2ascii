@@ -2,7 +2,7 @@
 ####### Compiler, tools and options
 #CC       = gcc -DGNU #-DBIGENDIAN #-dr
 #CC       = gcc -D DEBUG -D VERBOSE -g
-CC       = gcc -DGNU -g
+CC       = gcc -DGNU -g -fcommon
 ARCH     = -mmmx -msse -msse2 -mfpmath=sse 
 #ARCH     = -march=pentium4 -mmmx -msse -msse2 -mfpmath=sse -march=pentium4
 #ARCH	= -march=native -mfpmath=sse 
