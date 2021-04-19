@@ -157,7 +157,7 @@ int read_cmd_line(int argc,char **argv,config_structure *config){
 				snprintf(config->separator,MAX_FORMAT,optarg);
 				break;
 			case 'o':
-				snprintf(config->output_name,MAX_FORMAT,optarg);
+				snprintf(config->output_name,MAX_FILE_NAME,optarg);
 				break;
 			case 's':
 				config->order_output=1;
