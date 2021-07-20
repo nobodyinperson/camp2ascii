@@ -5,6 +5,10 @@
 The data loggers made by Campbell Scientific store their data in a proprietary binary file format. The physical support is either a memory card or it is transmitted via a GSM modem, etc 
 The tools presented here is an open source tool (covered by the [GPL license](http://www.fsf.org/licensing/licenses/gpl.html)) that allows to extract the data contained within these binary files. The output can be formatted to suit your needs and you can very precisely control how much data you want to extract
 
+## How accurate is it?
+
+I compare conversion results of the official CardConvert tool with `camp2ascii` [in this snippet](https://gitlab.com/tue-umphy/instruments/python3-csiweb/-/snippets/2011496). It seems `camp2ascii` ouputs one more digit but in the end - at least for my real-world sample data - errors seems be be well below 0.01% in magnitude which in my case is well below the rated measurement accuracy.
+
 ## How to use it?
 
 This is a command line program. Running it with the "-h" option shows a quick help explaining which options are available. Namely, the following options can be used:
