@@ -7,7 +7,7 @@ ARCH     = -mmmx -msse -msse2 -mfpmath=sse
 #ARCH     = -march=pentium4 -mmmx -msse -msse2 -mfpmath=sse -march=pentium4
 #ARCH	= -march=native -mfpmath=sse 
 OPTIM    = -O3 -fomit-frame-pointer -finline-functions -finline-functions-called-once -fno-math-errno -fdata-sections
-CFLAGS   = -Wall -W  -pipe $(ARCH) $(OPTIM)
+CFLAGS   = -Wall -W  -pipe $(ARCH) $(OPTIM) $(EXTRA_CFLAGS)
 #CFLAGS   = -Wall -W  -combine -pipe $(ARCH) $(OPTIM)
 LINK     = gcc
 INCPATH  = -I. 
